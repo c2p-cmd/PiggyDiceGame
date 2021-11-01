@@ -5,11 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class PigGame extends Application {
+public class PigGameApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(
-                PigGame.class.getResource("game.fxml")
+                PigGameApplication.class.getResource("game.fxml")
         );
 
         Scene scene = new Scene(fxmlLoader.load(), 500.0, 300.0);
@@ -22,6 +22,6 @@ public class PigGame extends Application {
     }
 
     public static void main(String[] args) {
-        Application.launch(PigGame.class);
+        Application.launch(PigGameApplication.class);
     }
 }
