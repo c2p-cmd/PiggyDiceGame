@@ -35,3 +35,9 @@ val diceImages: List<Image> =
             )
         )
     )
+
+val pigTitleImage: Image = Image(
+    PigGameApplication::class.java.getResourceAsStream(
+        "PigImage/0.png"
+    )
+)

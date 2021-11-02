@@ -48,7 +48,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="300.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="org.morons.piggydicegame.PigGameController">
+<VBox prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.morons.piggydicegame.PigGameController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -63,7 +63,7 @@
           <items>
             <MenuItem fx:id="aboutGameMenuItem" mnemonicParsing="false" text="About Game" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem fx:id="aboutUsMenuItem" mnemonicParsing="false" text="About Us" />
+                  <MenuItem fx:id="aboutTheDevMenuItem" mnemonicParsing="false" text="About Dev" />
           </items>
         </Menu>
       </menus>
@@ -82,7 +82,7 @@
          <children>
              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="3">
                  <children>
-                     <Label alignment="CENTER" text="Piggy Dice Game" textAlignment="CENTER" GridPane.columnSpan="3" GridPane.halignment="CENTER">
+                     <Label fx:id="titleLabel" alignment="CENTER" text="Piggy Dice Game" textAlignment="CENTER" GridPane.columnSpan="3" GridPane.halignment="CENTER">
                          <font>
                              <Font name="Japan" size="26.0" />
                          </font>
@@ -90,7 +90,7 @@
                   <ImageView fx:id="pigImageView" fitHeight="50.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true" />
                  </children>
              </HBox>
-            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+            <VBox fx:id="p1VBox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
                <children>
                   <Label prefHeight="30.0" text="Player 1" />
                   <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="166.0" spacing="35.0">
@@ -112,7 +112,7 @@
                </children>
             </VBox>
             <ImageView fx:id="dieImageView" fitHeight="95.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+             <VBox fx:id="p2VBox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                  <children>
                      <Label prefHeight="30.0" text="Player 2" />
                      <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="166.0" spacing="35.0">

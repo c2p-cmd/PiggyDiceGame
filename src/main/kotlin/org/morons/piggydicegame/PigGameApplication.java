@@ -1,11 +1,12 @@
 package org.morons.piggydicegame;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class PigGameApplication extends Application {
+public class PigGameApplication extends Application implements Runnable {
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(
@@ -22,6 +23,24 @@ public class PigGameApplication extends Application {
     }
 
     public static void main(String[] args) {
+        new Thread(
+                new PigGameApplication(),
+                "Piggy Game Thread"
+        ).start();
+    }
+
+    public static void quitAction() {
+        // Exiting JavaFX
+        Platform.exit();
+
+        // Exiting JVM
+        System.exit(0);
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Currently running thread: " + Thread.currentThread().getName());
         Application.launch(PigGameApplication.class);
     }
 }
+

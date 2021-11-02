@@ -1,6 +1,8 @@
 package org.morons.piggydicegame.model;
 
-public class Game extends Thread {
+import kotlin.Pair;
+
+public class Game {
 
     // constant declaration
     public static final int MAX_SCORE = 100;
@@ -10,6 +12,7 @@ public class Game extends Thread {
     private final Player p1;
     private final Player p2;
     private Player currentPlayer;
+    private Game game;
 
     // Constructor
     public Game(String p1name, String p2name) {
@@ -26,17 +29,17 @@ public class Game extends Thread {
     public Player getP2() { return this.p2; }
 
     // Status Methods
-    public boolean gameOver() {
+    public boolean isGameOver() {
         return currentPlayer.getTotalScore() >= MAX_SCORE;
     }
 
-    public boolean p1Turn() {
-        return this.currentPlayer == this.p1;
+    public boolean isP1Turn() {
+        return this.getCurrentPlayer() == this.getP1();
     }
 
     // Game Play Methods
     public void switchTurn() {
-        if (p1Turn())
+        if (isP1Turn())
             this.currentPlayer = this.p2;
         else
             this.currentPlayer = this.p1;
@@ -54,9 +57,29 @@ public class Game extends Thread {
 
     public void hold() {
         this.currentPlayer.saveScore();
-        if (!gameOver()) {
+        if (!isGameOver()) {
             switchTurn();
             d.setTop(0);
         }
+    }
+
+    public Pair<
+            Pair<Integer, Integer>,
+            Pair<Integer, Integer>
+            >
+    getPlayerScores() {
+        // creating pair for players
+        Pair<Integer, Integer> player1 = new
+                Pair<>(
+                        getP1().getTurnScore(),
+                        getP1().getTotalScore()
+                );
+        Pair<Integer, Integer> player2 = new
+                Pair<>(
+                        getP2().getTurnScore(),
+                        getP2().getTotalScore()
+                );
+
+        return new Pair<>(player1, player2);
     }
 }
