@@ -48,7 +48,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.morons.piggydicegame.PigGameController">
+<VBox fx:id="rootVBox" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.morons.piggydicegame.PigGameController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>

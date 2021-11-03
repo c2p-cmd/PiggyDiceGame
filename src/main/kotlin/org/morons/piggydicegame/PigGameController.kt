@@ -84,6 +84,9 @@ class PigGameController : Initializable {
     @FXML
     lateinit var p2VBox: VBox
 
+    @FXML
+    lateinit var rootVBox: VBox
+
     override fun initialize(url: URL?, resourceBundle: ResourceBundle?) {
         // setting pig image view
         pigImageView.image = pigTitleImage

@@ -11,6 +11,7 @@ import javafx.scene.layout.*
 import javafx.stage.*
 import javafx.util.Duration
 import org.morons.piggydicegame.PigGameApplication
+import java.util.*
 import kotlin.math.pow
 
 const val DEV_NAME = "Sharan Thakur"
@@ -128,7 +129,18 @@ class AboutDev :Runnable {
             aboutRootPane.children.addAll(aboutUsVbox, aboutDevOkButton)
 
             // Creating a scene
-            val scene = Scene(aboutRootPane, aboutUsVbox.prefWidth, aboutUsVbox.prefHeight)
+            val scene = Scene(
+                aboutRootPane,
+                aboutUsVbox.prefWidth,
+                aboutUsVbox.prefHeight
+            )
+
+            //Importing the stylesheet
+            scene.stylesheets.add(
+                Objects.requireNonNull(
+                    PigGameApplication::class.java.getResource("PiggyAboutStyle.css")
+                ).toExternalForm()
+            )
             setScene(scene)
         }
     }

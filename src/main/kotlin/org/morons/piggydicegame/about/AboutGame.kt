@@ -1,28 +1,24 @@
 package org.morons.piggydicegame.about
 
+
 import javafx.animation.Interpolator
 import javafx.animation.ScaleTransition
 import javafx.animation.SequentialTransition
-
 import javafx.event.EventHandler
-
 import javafx.geometry.Insets
 import javafx.geometry.Orientation
-
 import javafx.scene.Scene
 import javafx.scene.control.*
 import javafx.scene.image.*
 import javafx.scene.layout.*
-
 import javafx.stage.*
-
 import javafx.util.Duration
 import org.morons.piggydicegame.PigGameApplication
-import org.morons.piggydicegame.pigFaceImage
 import org.morons.piggydicegame.pigTitleImage
-
-
+import java.net.URL
+import java.util.*
 import kotlin.math.pow
+
 
 //Function to set the in ExpIn interpolator
 private val EXP_IN: Interpolator = object : Interpolator() {
@@ -137,8 +133,18 @@ it will set your current score to 0.
             aboutGameRootPane.children.addAll(aboutAppVBox, aboutGameOkButton)
 
             // Creating a scene
-            val scene = Scene(aboutGameRootPane, aboutAppVBox.prefWidth, aboutAppVBox.prefHeight)
+            val scene = Scene(
+                aboutGameRootPane,
+                aboutAppVBox.prefWidth,
+                aboutAppVBox.prefHeight
+            )
 
+            //Importing the stylesheet
+            scene.stylesheets.add(
+                Objects.requireNonNull(
+                    PigGameApplication::class.java.getResource("PiggyAboutStyle.css")
+                ).toExternalForm()
+            )
             setScene(scene)
         }
     }
