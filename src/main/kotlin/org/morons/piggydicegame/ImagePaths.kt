@@ -41,3 +41,9 @@ val pigTitleImage: Image = Image(
         "PigImage/0.png"
     )
 )
+
+val pigFaceImage: Image = Image(
+    PigGameApplication::class.java.getResourceAsStream(
+        "PigImage/PigFaceImage.png"
+    )
+)

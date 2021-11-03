@@ -4,7 +4,10 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import java.util.Objects;
 
 public class PigGameApplication extends Application implements Runnable {
     @Override
@@ -13,11 +16,22 @@ public class PigGameApplication extends Application implements Runnable {
                 PigGameApplication.class.getResource("game.fxml")
         );
 
-        Scene scene = new Scene(fxmlLoader.load(), 500.0, 300.0);
+        Scene scene = new Scene(
+                fxmlLoader.load(),
+                500.0,
+                300.0
+        );
 
         stage.setTitle("Piggy Dice Game.");
         stage.setScene(scene);
         stage.setResizable(false);
+        stage.getIcons().add(
+                new Image(
+                        Objects.requireNonNull(
+                                PigGameApplication.class.getResourceAsStream("PigImage/PigIcon.png")
+                        )
+                )
+        );
 
         stage.show();
     }

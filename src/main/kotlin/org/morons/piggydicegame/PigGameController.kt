@@ -161,7 +161,7 @@ class PigGameController : Initializable {
     }
 
     private fun setDieImage(top: Int) {
-        if (top == 0) dieImageView.image = pigTitleImage
+        if (top == 0) dieImageView.image = pigFaceImage
         else dieImageView.image = diceImages[top-1]
     }
 
