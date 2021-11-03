@@ -22,6 +22,18 @@ public class PigGameApplication extends Application implements Runnable {
                 300.0
         );
 
+        scene.getStylesheets().addAll(
+                Objects.requireNonNull(
+                        PigGameApplication.class.getResource("PiggyMenuStyle.css")
+                ).toExternalForm(),
+                Objects.requireNonNull(
+                        PigGameApplication.class.getResource("PiggyApplicationStyle.css")
+                ).toExternalForm(),
+                Objects.requireNonNull(
+                        PigGameApplication.class.getResource("PiggyButtonStyle.css")
+                ).toExternalForm()
+        );
+
         stage.setTitle("Piggy Dice Game.");
         stage.setScene(scene);
         stage.setResizable(false);

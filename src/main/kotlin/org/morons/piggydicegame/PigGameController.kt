@@ -28,6 +28,7 @@ const val FOCUS_COLOUR = "-fx-background-color:\n" +
                             "rgb(212,212,221);\n"
 
 class PigGameController : Initializable {
+
     // data fields
     private lateinit var game: Game
     private lateinit var clock: Roller
@@ -189,5 +190,8 @@ class PigGameController : Initializable {
 
         disableButtons(false)
         setDieImage(0)
+
+        p1VBox.style = null
+        p2VBox.style = null
     }
 }
