@@ -34,7 +34,7 @@ public class PigGameApplication extends Application implements Runnable {
                 ).toExternalForm()
         );
 
-        stage.setTitle("Piggy Dice Game.");
+        stage.setTitle("Piggy Dice Game");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.getIcons().add(
